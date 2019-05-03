@@ -54,9 +54,9 @@
 
     // Set these variables to their DOM elements
 
-    const coffeeImage = document.querySelector('#coffee-image');
+    let coffeeImage = document.querySelector('#coffee-image');
     coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
-    // const revenueMessage;
+    let revenueMessage;
 
 
     // use this JavaScript object in further study step
@@ -69,12 +69,24 @@
     };
 
 function makeCoffee() {
-    const coffeeImage = document.querySelector('#coffee-image');
-    const oldSrc = coffeeImage.getAttribute('src');
-    coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+    coffeeImage = document.querySelector('#coffee-image');
+    oldSrc = coffeeImage.getAttribute('src');
+    coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+    setTimeout (() => {
+      coffeeImage = document.querySelector('#coffee-image');
+      oldSrc = coffeeImage.getAttribute('src');
+      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+      }, 1500);
+    setTimeout (() => {
+      coffeeImage = document.querySelector('#coffee-image');
+      oldSrc = coffeeImage.getAttribute('src');
+      coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+      }, 2500);
 
 }
+
 coffeeImage.addEventListener('click', makeCoffee);
+
 
 
 
